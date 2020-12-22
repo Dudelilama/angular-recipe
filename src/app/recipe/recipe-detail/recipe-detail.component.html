@@ -1,1 +1,32 @@
-<p>recipe-detail works!</p>
+<div class="row mb-3">
+  <div class="col-sm-12">
+    <img src="{{ selectedRecipe?.imagePath }}" alt="" class="img-fluid">
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-sm-12">
+    <h1>{{ selectedRecipe?.name }}</h1>
+  </div>
+</div>
+<div class="row mb-2">
+  <div class="col-sm-12">
+    <button class="btn btn-success mr-1">Zur Einkaufsliste</button>
+    <button class="btn btn-primary mr-1">Bearbeiten</button>
+    <button class="btn btn-danger mr-1">Löschen</button>
+  </div>
+</div>
+<div class="row mb-2">
+  <div class="col-sm-12">
+    <p>{{ selectedRecipe?.description }}</p>
+  </div>
+</div>
+<div class="row mb-5">
+  <div class="col-sm-12">
+    <ul class="list-group">
+      <li class="list-group-item"
+          *ngFor="let ingredient of selectedRecipe?.ingredients">
+        {{ ingredient.name }} ({{ ingredient.amount }})
+      </li>
+    </ul>
+  </div>
+</div>
