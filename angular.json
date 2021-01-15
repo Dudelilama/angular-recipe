@@ -29,7 +29,7 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/popper.js/dist/popper.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
@@ -67,7 +67,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "food-receipts:build"
+            "browserTarget": "food-receipts:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {

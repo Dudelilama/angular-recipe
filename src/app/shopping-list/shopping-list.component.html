@@ -1,12 +1,15 @@
 <div class="row">
-  <div class="col-sm-10">
-    <app-shopping-list-add></app-shopping-list-add>
+  <div class="col-md-12">
+    <app-shopping-list-add
+      [selectedIngredient]="selectedIngredient"
+      (cleared)="onCleared()"></app-shopping-list-add>
     <hr>
     <ul class="list-group">
-      <a href=""
-         class="list-group-item"
+      <a class="list-group-item"
          style="cursor: pointer"
-         *ngFor="let ingredient of ingredients">{{ingredient.name}} ({{ingredient.amount}})
+         *ngFor="let ingredient of ingredients"
+         (click)="onSelectItem(ingredient)">
+        {{ingredient.name}} ({{ingredient.amount}})
       </a>
     </ul>
   </div>
